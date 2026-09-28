@@ -56,23 +56,23 @@ const navLinks = [
 const cohorts = [
   {
     icon: Sprout,
-    label: "For farmers",
+    label: "Kwa mkulima",
     title: "Direct Market Access",
-    copy: "List each harvest, meet verified demand, and negotiate a fair price without giving away value to unnecessary middlemen.",
+    copy: "List each harvest from your shamba, meet verified demand from Nairobi to Mombasa, and negotiate a fair price without giving away value to unnecessary brokers.",
     points: ["Post produce in minutes", "Transparent price discovery", "Verified buyer requests"],
   },
   {
     icon: Store,
-    label: "For bulk buyers",
+    label: "Kwa wanunuzi",
     title: "B2B Supply Integrity",
-    copy: "Source directly for restaurants, hotels, retailers, and processors with clearer volumes, lead times, and delivery logistics.",
+    copy: "Hotels, mama mboga shops, hotels, supermarkets, and processors across Kenya source directly with clearer volumes, lead times, and delivery logistics.",
     points: ["Reliable farm-level supply", "Consolidated bulk orders", "Traceable fulfilment"],
   },
   {
     icon: ShoppingBasket,
-    label: "For consumers",
+    label: "Kwa kaya",
     title: "Farm-to-Table Freshness",
-    copy: "Bring home nutrient-rich seasonal food grown near you, with a simple order experience and visibility into its origin.",
+    copy: "Bring home nutrient-rich seasonal food harvested near you—sukuma wiki, viazi, matunda freshi—with a simple order experience and full visibility into its origin.",
     points: ["Fresh local harvests", "Know your producer", "Convenient delivery options"],
   },
 ] as const;
@@ -80,15 +80,15 @@ const cohorts = [
 const faqs = [
   {
     q: "How does delivery work for farm produce?",
-    a: "Delivery is agreed per order based on distance, volume, and produce type. Buyers can select farmer delivery, collection at an agreed hub, or a supported logistics partner. Timing and fees are confirmed before payment.",
+    a: "Delivery is agreed per order based on distance, volume, and produce type. Buyers can select farmer delivery, collection at an agreed market or hub, or a supported logistics partner—from boda riders for town runs to refrigerated trucks for bulk hauls upcountry. Timing and fees are confirmed before payment.",
   },
   {
     q: "Is my payment protected until the order arrives?",
-    a: "Yes. Eligible marketplace orders use a secure payment-holding flow. Funds are reserved when an order is placed and released to the farmer after the buyer confirms the agreed quantity and quality were received.",
+    a: "Yes. Eligible marketplace orders use a secure payment-holding flow powered by mobile money. Funds are reserved when an order is placed via M-Pesa and released to the farmer only after the buyer confirms the agreed quantity and quality were received.",
   },
   {
-    q: "How can a farmer register a field and start selling?",
-    a: "Download the app, create a farmer profile, and add your field location, crop type, expected volume, and harvest window. The Washamba team verifies key details before your first public listing goes live.",
+    q: "How can a farmer register a shamba and start selling?",
+    a: "Download the app, create a farmer profile, and add your county, ward, crop type, expected volume, and harvest window. The Washamba team verifies key details before your first public listing goes live.",
   },
   {
     q: "Can restaurants and retailers place recurring orders?",
@@ -182,18 +182,18 @@ function WashambaPage() {
     <main id="top" className="overflow-hidden">
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
         <nav aria-label="Primary navigation" className="glass-nav mx-auto max-w-7xl rounded-xl border border-border/80 px-4 sm:px-6">
-          <div className="grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:grid-cols-[1fr_auto_1fr]">
+          <div className="grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
             <Logo />
-            <div className="hidden items-center gap-7 lg:flex">
+            <div className="hidden items-center gap-7 md:flex">
               {navLinks.map(([label, href]) => <a key={href} href={href} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{label}</a>)}
             </div>
-            <div className="hidden justify-self-end lg:block"><Button asChild size="sm"><a href="#download"><PlayStoreIcon />Download App</a></Button></div>
-            <Button variant="ghost" size="icon" className="lg:hidden" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)}>
+            <div className="hidden justify-self-end md:block"><Button asChild size="sm"><a href="#download"><PlayStoreIcon />Download App</a></Button></div>
+            <Button variant="ghost" size="icon" className="md:hidden" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)}>
               {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </Button>
           </div>
           {menuOpen && (
-            <div className="border-t border-border py-4 lg:hidden">
+            <div className="border-t border-border py-4 md:hidden">
               <div className="grid gap-1">{navLinks.map(([label, href]) => <a key={href} href={href} onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-3 text-sm font-semibold hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{label}</a>)}</div>
               <Button asChild className="mt-3 w-full"><a href="#download" onClick={() => setMenuOpen(false)}><PlayStoreIcon />Download App</a></Button>
             </div>
@@ -205,18 +205,18 @@ function WashambaPage() {
         <div className="absolute inset-x-0 bottom-0 h-px bg-border" />
         <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-2 text-xs font-bold text-forest shadow-sm"><span className="size-2 rounded-full bg-amber" /> Built for Africa's food economy</div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-2 text-xs font-bold text-forest shadow-sm"><span className="size-2 rounded-full bg-amber" /> Proudly Kenyan — built for our food economy</div>
             <h1 className="max-w-3xl text-balance text-4xl font-extrabold leading-[1.12] text-foreground sm:text-5xl lg:text-6xl">Connecting farmers & buyers made easy.</h1>
-            <p className="mt-5 text-xl font-bold text-primary sm:text-2xl">Direct from the soil to the market.</p>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">Washamba bridges the agricultural gap so smallholder farmers earn fairly, businesses source reliably, and families enjoy fresher local produce—without exploitative middlemen.</p>
+            <p className="mt-5 text-xl font-bold text-primary sm:text-2xl">Direct from the shamba to the soko.</p>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">Washamba bridges the gap between the shamba and the soko, so smallholder farmers across Kenya earn fairly, businesses source reliably, and every family enjoys fresher mboga freshi—without exploitative middlemen.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg"><a href="#download"><PlayStoreIcon />Get the App</a></Button>
               <Button asChild variant="outline" size="lg"><a href="#marketplace">Explore the Marketplace <ArrowRight className="size-4" /></a></Button>
             </div>
             <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-muted-foreground">
-              <span className="inline-flex items-center gap-2"><ShieldCheck className="size-5 text-primary" /> Verified profiles</span>
-              <span className="inline-flex items-center gap-2"><WalletCards className="size-5 text-primary" /> Protected payments</span>
-              <span className="inline-flex items-center gap-2"><Truck className="size-5 text-primary" /> Clear logistics</span>
+              <span className="inline-flex items-center gap-2"><ShieldCheck className="size-5 text-primary" /> Verified farmers</span>
+              <span className="inline-flex items-center gap-2"><WalletCards className="size-5 text-primary" /> M-Pesa secured payments</span>
+              <span className="inline-flex items-center gap-2"><Truck className="size-5 text-primary" /> County-wide logistics</span>
             </div>
           </div>
           <AppMockup />
