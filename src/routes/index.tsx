@@ -28,16 +28,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Washamba — Direct from the soil to the market" },
-      {
-        name: "description",
-        content:
-          "Washamba connects African smallholder farmers directly with verified buyers and consumers for fairer prices and fresher produce.",
-      },
-      { property: "og:title", content: "Washamba — Farming meets its market" },
-      {
-        property: "og:description",
-        content: "A trusted marketplace for fair farm trade, reliable supply, and locally sourced produce.",
-      },
+        {
+          name: "description",
+          content:
+            "Washamba connects Kenyan smallholder farmers directly with verified buyers and consumers for fairer prices, fresher produce, and M-Pesa secured payments.",
+        },
+        { property: "og:title", content: "Washamba — Kutoka shambani hadi sokoni" },
+        {
+          property: "og:description",
+          content: "Kenya's trusted marketplace for fair farm trade, reliable supply, and locally sourced produce.",
+        },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -65,7 +65,7 @@ const cohorts = [
     icon: Store,
     label: "Kwa wanunuzi",
     title: "B2B Supply Integrity",
-    copy: "Hotels, mama mboga shops, hotels, supermarkets, and processors across Kenya source directly with clearer volumes, lead times, and delivery logistics.",
+    copy: "Hotels, mama mboga shops, supermarkets, and processors across Kenya source directly with clearer volumes, lead times, and delivery logistics.",
     points: ["Reliable farm-level supply", "Consolidated bulk orders", "Traceable fulfilment"],
   },
   {
