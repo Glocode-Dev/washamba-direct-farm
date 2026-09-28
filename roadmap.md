@@ -1,4 +1,4 @@
 # Roadmap
-- [ ] Build complete Washamba landing page
-- [ ] Add accessible interactions and metadata
-- [ ] Verify desktop and mobile experience
+- [x] Build complete Washamba landing page
+- [x] Add accessible interactions and metadata
+- [x] Verify desktop and mobile experience
